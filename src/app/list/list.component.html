@@ -1,0 +1,15 @@
+<section class="list-container">
+  <div class="list-title-bar">
+    <h1 class="bar-title">Lanches</h1>
+  </div>
+  <section class="list-lines">
+    <div *ngFor="let product of products" class="list-item" >
+      <img class="item-photo" [src]='product.img'>
+      <div class="item-infos">
+        <p class="item-name">{{product.name}}</p>
+        <p class="item-price">R$ {{product.price | number :'.2-2'}}</p>
+      </div>
+      <button class="button button--state-back button-list" routerLink="/detail/{{product.id}}">+ Carrinho</button>
+    </div>
+  </section>
+</section>

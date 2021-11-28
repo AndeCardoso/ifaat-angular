@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  background-color: #0033cd;
+  border: none;
+  color: white;
+  font: 500 18px Arial;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 15px 20px;
+}
+.button--state-back {
+  background-color: #a80000;
+}

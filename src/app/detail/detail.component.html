@@ -1,0 +1,17 @@
+<div class="detail-container">
+  <div class="detail-title-bar">
+    <h1 class="bar-title">Detalhes do Produto</h1>
+  </div>
+  <section class="detail">
+    <img class="detail-photo" [src]="product.img">
+    <div class='detail-infos'>
+      <p class="detail-name">{{product.name}}</p>
+      <p class="detail-price">R$ {{product.price | number :'.2-2'}}</p>
+      <input class="detail-quantity" type="number" [(ngModel)]="quantity">
+      <button class="button" (click)="addItem()">Adicionar</button>
+    </div>
+  </section>
+  <div class="detail-button">
+    <button class="button button--state-back" (click)="back()">Voltar</button>
+  </div>
+</div>

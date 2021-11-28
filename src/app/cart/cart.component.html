@@ -1,0 +1,39 @@
+<div class="cart-container">
+  <div class="cart-title-bar">
+    <h1 class="bar-title">Carrinho de Compras</h1>
+  </div>
+  <section class="cart">
+    <ul *ngIf="cart.items.length > 0; else messageEmpty" class="cart-list">
+      <div class="value-title">
+        <span>Produto</span>
+        <span>Quantidade</span>
+        <span>Valor Total</span>
+      </div>
+      <li *ngFor="let item of cart.items" class="cart-list-item">
+        <div class="firsts-infos-item">
+          <span class="cart-list-item-name">{{item.product.name}}</span>
+          <span class="cart-list-item-quant">{{item.quantity}}<span>x</span></span>
+        </div>
+        <span class="cart-list-item-value">R$ {{item.totalValue | number: '.2-2'}}</span>
+      </li>
+    </ul>
+    <ng-template #messageEmpty>
+      Adicione algum produto ao carrinho!
+    </ng-template>
+    <div class="final-value">
+      <span>Total:</span>
+      <p class="cart-total">R$ {{cart.totalValue | number : '.2-2'}}</p>
+    </div>
+  </section>
+  <div class="cart-actions">
+    <button class="button button--state-back" (click)="goBack()">Voltar</button>
+    <button class="button" (click)="goToProducts()">Var Mais Produtos</button>
+    <button class="button cart-button" (click)="goBuy()">Finalizar</button>
+  </div>
+  <div class="alert-success" *ngIf="this.isAlertSuccess">
+    <h2>Compra efetuada com sucesso!</h2>
+  </div>
+  <div class="alert-error" *ngIf="this.isAlertError">
+    <h2>O carrinho esta vazio!</h2>
+  </div>
+</div>

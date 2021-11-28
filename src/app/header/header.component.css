@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  background-color: #ff0000;
+  justify-content: space-between;
+  padding: 10px 40px;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.logo {
+  width: 150px;
+  height: 60px;
+}
+.cart {
+  width: 80px;
+}
